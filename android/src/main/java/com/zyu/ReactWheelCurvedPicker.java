@@ -55,20 +55,29 @@ public class ReactWheelCurvedPicker extends WheelCurvedPicker {
         super.drawForeground(canvas);
 
         Paint paint = new Paint();
-        paint.setColor(Color.WHITE);
-        int colorFrom = 0x00FFFFFF;//Color.BLACK;
-        int colorTo = Color.WHITE;
-        LinearGradient linearGradientShader = new LinearGradient(rectCurItem.left, rectCurItem.top, rectCurItem.right/2, rectCurItem.top, colorFrom, colorTo, Shader.TileMode.MIRROR);
-        paint.setShader(linearGradientShader);
-        canvas.drawLine(rectCurItem.left, rectCurItem.top, rectCurItem.right, rectCurItem.top, paint);
-        canvas.drawLine(rectCurItem.left, rectCurItem.bottom, rectCurItem.right, rectCurItem.bottom, paint);
+
+        paint.setColor(Color.GRAY);
+
+        canvas.drawLine(
+                rectCurItem.left,
+                rectCurItem.top,
+                rectCurItem.right,
+                rectCurItem.top,
+                paint);
+
+        canvas.drawLine(
+                rectCurItem.left,
+                rectCurItem.bottom,
+                rectCurItem.right,
+                rectCurItem.bottom,
+                paint);
     }
 
     @Override
     public void setItemIndex(int index) {
         super.setItemIndex(index);
         unitDeltaTotal = 0;
-		mHandler.post(this);
+        mHandler.post(this);
     }
 
     public void setValueData(List<Integer> data) {
@@ -86,7 +95,7 @@ class ItemSelectedEvent extends Event<ItemSelectedEvent> {
 
     private final int mValue;
 
-    protected ItemSelectedEvent(int viewTag,  int value) {
+    protected ItemSelectedEvent(int viewTag, int value) {
         super(viewTag);
         mValue = value;
     }
