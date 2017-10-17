@@ -8,13 +8,13 @@ var WheelCurvedPicker = CreateReactClass({
     propTypes: {
         ...View.propTypes,
 
-        data: PropTypes.arrayOf(PropTypes.shape),
+        data: PropTypes.arrayOf(PropTypes.object),
 
         textColor: ColorPropType,
 
         textSize: PropTypes.number,
 
-        itemStyle: PropTypes.shape,
+        itemStyle: PropTypes.object,
 
         itemSpace: PropTypes.number,
 
