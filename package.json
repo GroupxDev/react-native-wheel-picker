@@ -21,10 +21,12 @@
     "url": "https://github.com/lesliesam/react-native-wheel-picker/issues"
   },
   "homepage": "https://github.com/lesliesam/react-native-wheel-picker#readme",
+  "peerDependencies": {
+    "react": "*",
+    "react-native": "*"
+  },
   "dependencies": {
     "create-react-class": "15.6.2",
-    "prop-types": "15.6.0",
-    "react": "16.0.0",
-    "react-native": "0.49.3"
+    "prop-types": "15.6.0"
   }
 }
